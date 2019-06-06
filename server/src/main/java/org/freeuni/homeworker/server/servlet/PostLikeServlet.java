@@ -2,7 +2,8 @@ package org.freeuni.homeworker.server.servlet;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.freeuni.homeworker.server.database.managers.postLikeManager.PostLikeManager;
+import org.freeuni.homeworker.server.Constants;
+import org.freeuni.homeworker.server.database.managers.postLike.PostLikeDAO;
 import org.freeuni.homeworker.server.model.postLike.PostLikeObject;
 
 import javax.servlet.ServletException;
@@ -33,7 +34,7 @@ public class PostLikeServlet extends HttpServlet {
     private void executeRequest(HttpServletRequest request, String jSonObject) {
         try {
             PostLikeObject postLikeObject = new ObjectMapper().readValue(jSonObject, PostLikeObject.class);
-            PostLikeManager likeModuleManager = (PostLikeManager) request.getServletContext().getAttribute("likeModuleManager");
+            PostLikeDAO likeModuleManager = (PostLikeDAO) request.getServletContext().getAttribute(Constants.POST_LIKE_DAO);
             if(postLikeObject.isLiked()){
                 likeModuleManager.like(postLikeObject);
             } else {

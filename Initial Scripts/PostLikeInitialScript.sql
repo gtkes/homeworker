@@ -3,9 +3,10 @@ USE homeworker;
 
 DROP PostLike
 
+
 CREATE TABLE PostLike(
-    id PRIMARY KEY,
-    userID NUMBER NOT NULL,
-    postID NUMBER NOT NULL,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    userID BIGINT NOT NULL,
+    postID BIGINT NOT NULL,
     liked BOOLEAN NOT NULL
 );

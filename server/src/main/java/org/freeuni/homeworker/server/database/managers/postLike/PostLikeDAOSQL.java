@@ -40,7 +40,7 @@ public class PostLikeDAOSQL implements PostLikeDAO {
     /**
      * Removes Post Like Information From DataBase
      * @param postLikeObject UnLike Information(userID, postID)
-     * @return true If Removed Successfully
+     * @return true If Query Executed Successfully
      */
     public boolean unLike(PostLikeObject postLikeObject) {
         return doOrder(postLikeObject, DELETE_QUERY);
