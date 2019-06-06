@@ -5,4 +5,7 @@ public interface Constants {
 	String OBJECT_MAPPER = "objectMapper";
 
 	String USER_MANAGER = "userManager";
+
+	String POST_LIKE_DAO = "postLikeDAO";
+
 }
